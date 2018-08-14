@@ -1,0 +1,83 @@
+// pointers 1.cpp : Defines the entry point for the console application.
+//
+// 
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+void passByValue(int x)
+{
+	x = 99;
+	cout << x << endl;
+}
+void passByReferance(int *x)
+{
+	*x = 66;
+	cout << *x << endl;
+}
+void grab(int* x, int* y, int* z)
+{
+	int* vInventory = x;
+	int* vBag = y;
+	int* vSlot = z; 
+	cout << "passed to \t\t\t" << &vInventory << endl;
+	cout << "passed to \t\t\t" << &vBag << endl;
+	cout << "passed to \t\t\t" << &vSlot << endl;
+}
+int main()
+{
+	
+	int**inventory;
+	int bag = 5;
+	int slots = 11;
+
+	inventory = new int* [bag];
+	for (int i = 0; i < 5;i++)
+	{
+			
+		cout << "\t" << "bag" << i << "\t" << &inventory[i] << endl;
+		for (int j = 0; j < 11; j++)
+		{inventory[i] = new int[slots];
+			inventory[i][j];
+			cout << "slot" << j << "\t " << &inventory[i][i] << endl;
+			//grab(*inventory, inventory[i], &inventory[i][j]);
+		}// end for
+
+	}//end for
+	system("pause");
+}
+/*
+	int counter;
+	int x1 = rand() % (2 % 100);
+	//passByValue(x1);
+	//passByReferance(&x1);
+
+	int r = 0;
+	int c = 0;
+	
+	int **table; // declare p2p here;
+
+		table = new int*[r];
+		const int size_row = 5;
+counter = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		
+		table[i]; // first dimention
+		cout << "\t" << &table[i] << endl;
+		for (int j = 0; j < size_row; j++)
+		{
+			
+			table[i] = new int[3]; // second dimention
+		
+			x1 = rand() * 10; // rand int var;
+			table[i][j] = x1;	   // fillin in here
+			cout << "colum address  " << &table[i][j] << endl;
+			cout << "c val  " << table[i][j]  << "\t\t\t" << j <<  endl;
+		counter++;
+		}// end for
+	
+	} // end for
+	*/
